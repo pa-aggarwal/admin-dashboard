@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome icons kit -->
+    <script src="https://kit.fontawesome.com/f95d3e3dac.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" href="./stylesheets/styles.css">
     <title>Admin Dashboard</title>
@@ -11,15 +13,76 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="header-search"></div>
-            <div class="header-userInfo"></div>
-            <div class="header-profile"></div>
-            <nav class="header-btnWrapper"></nav>
+            <div class="header-search">
+                <form action="" class="search-form">
+                    <button type="submit" aria-label="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="search" name="search" id="search">
+                </form>
+            </div>
+            <div class="header-userInfo">
+                <button type="button" aria-label="notifications">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+                <div class="info">
+                    <img src="https://api.multiavatar.com/790e94ca70ba4131f1.svg" alt="avatar" class="avatar-img">
+                    <span class="username">Morgan Oakley</span>
+                </div>
+            </div>
+            <div class="header-profile">
+                <img src="https://api.multiavatar.com/790e94ca70ba4131f1.svg" alt="avatar" class="avatar-img">
+                <div class="header-greeting">
+                    <p>Hi there,</p>
+                    <h1>Morgan Oakley (@morgan)</h1>
+                </div>
+            </div>
+            <nav class="header-btnWrapper">
+                <button type="button">New</button>
+                <button type="button">Upload</button>
+                <button type="button">Share</button>
+            </nav>
         </header>
         <aside class="sidebar">
-            <div class="sidebar-title"></div>
-            <nav class="sidebar-userLinks"></nav>
-            <div class="sidebar-infoLinks"></div>
+            <div class="sidebar-title">
+                <i class="fa-solid fa-chart-simple sidebar-icon"></i>
+                <h2>Dashboard</h2>
+            </div>
+            <nav class="sidebar-userLinks">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-house sidebar-icon"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-regular fa-address-card sidebar-icon"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-message sidebar-icon"></i> Messages</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-clock sidebar-icon"></i> History</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-note-sticky sidebar-icon"></i> Tasks</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users sidebar-icon"></i> Communities</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-infoLinks">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-gear sidebar-icon"></i> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-circle-question sidebar-icon"></i> Support</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-lock sidebar-icon"></i> Privacy</a>
+                    </li>
+                </ul>
+            </div>
         </aside>
         <main class="content">
             <section class="project-section"></section>

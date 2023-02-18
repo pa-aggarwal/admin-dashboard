@@ -8,8 +8,29 @@ html {
     box-sizing: inherit;
 }
 
+/* Remove default margins on paragraphs and headings */
+h1, h2, h3, p {
+    margin: 0;
+}
+
 body {
     font-size: 1.6rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+button {
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+}
+
+.avatar-img {
+    display: inline-block;
+    margin-right: 2rem;
+    width: 4.5rem;
 }
 
 .container {
@@ -25,10 +46,11 @@ body {
 
 .header {
     grid-area: header;
-    padding: 2rem;
+    padding: 2rem 3rem;
     display: grid;
-    grid-template-columns: minmax(300px, 60%) 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: minmax(300px, 65%) 1fr;
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
     gap: 2rem;
 }
 
@@ -36,19 +58,69 @@ body {
     grid-area: 1 / 1;
 }
 
+.header-search input {
+    border: 1px solid black;
+    border-radius: 2rem;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-left: 1rem;
+    width: max(250px, 85%);
+}
+
+.header-search input:focus {
+    outline: none;
+}
+
 .header-userInfo {
+    font-size: 2rem;
+    font-weight: bold;
     grid-area: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    min-width: max-content;
+}
+
+.header-userInfo .info {
+    display: flex;
+    align-items: center;
+}
+
+.header-search button,
+.header-userInfo button {
+    border-radius: 50%;
+    padding: 1rem;
+    width: 4rem;
 }
 
 .header-profile {
+    font-weight: bold;
     grid-area: 2 / 1;
+    display: flex;
+    align-items: center;
+}
+
+.header-profile .avatar-img {
+    width: 7rem;
 }
 
 .header-btnWrapper {
     grid-area: 2 / 2;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.header-btnWrapper button {
+    border-radius: 2rem;
+    padding: 1rem 3rem;
 }
 
 .sidebar {
+    background-color: #30343F;
+    color: #FAFAFF;
+    font-size: 2.2rem;
     grid-area: sidebar;
     padding: 2rem;
     display: grid;
@@ -56,10 +128,43 @@ body {
     grid-template-rows: repeat(3, auto);
     /* Prevents rows from occupying remaining space */
     align-content: start;
-    row-gap: 4rem;
+    row-gap: 5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.sidebar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sidebar-icon {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    width: 4rem;
+}
+
+.sidebar-title h2 {
+    font-size: 2.8rem;
+    display: inline-block;
+}
+
+.sidebar-title .sidebar-icon {
+    font-size: 3.2rem;
 }
 
 .content {
+    background-color: #e9ecef;
     grid-area: main-content;
     padding: 3rem 2rem;
     display: grid;
