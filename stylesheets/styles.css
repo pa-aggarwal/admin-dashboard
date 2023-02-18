@@ -1,0 +1,84 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/* Elements defined width or height is unaffected by padding/borders. */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    display: grid;
+    /* First column width has a minimum size threshold */
+    grid-template-columns: minmax(250px, 1fr) 4fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main-content";
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: minmax(300px, 60%) 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+
+.header-search {
+    grid-area: 1 / 1;
+}
+
+.header-userInfo {
+    grid-area: 1 / 2;
+}
+
+.header-profile {
+    grid-area: 2 / 1;
+}
+
+.header-btnWrapper {
+    grid-area: 2 / 2;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 2rem;
+    display: grid;
+    /* Size rows based on height of content */
+    grid-template-rows: repeat(3, auto);
+    /* Prevents rows from occupying remaining space */
+    align-content: start;
+    row-gap: 4rem;
+}
+
+.content {
+    grid-area: main-content;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "projects announcements"
+        "projects trending";
+    gap: 3rem 2rem;
+}
+
+.project-section {
+    grid-area: projects;
+}
+
+.announcement-section {
+    grid-area: announcements;
+}
+
+.trending-section {
+    grid-area: trending;
+}
